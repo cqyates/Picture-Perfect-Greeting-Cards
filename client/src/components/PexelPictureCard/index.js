@@ -2,8 +2,8 @@ import {Card} from 'react-bootstrap';
 const PexelPictureCard = ({ picture }) => {
   const handleImageSelect = (event) => {
     const pexelID = event.target.getAttribute('data-pid');
-    console.log(pexelID);
     localStorage.setItem('currentImage', pexelID);
+    document.location.href = "/build"
   };
 
   return (

@@ -30,7 +30,7 @@ const cardSchema = new Schema({
     trim: true
   },
   pexel_id: {
-    type: String,
+    type: Int,
     required: true
   },
   imageSRC: {
