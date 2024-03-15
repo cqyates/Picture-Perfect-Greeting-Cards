@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
-
+require("dotenv").config()
+console.log("pexel key:" + process.env.PEXEL_KEY)
 const app = express();
 const PORT = process.env.PORT || 3001;
 

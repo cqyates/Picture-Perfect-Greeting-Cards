@@ -1,4 +1,6 @@
 // route to get logged in user's info (needs the token)
+import { createClient } from 'pexels';
+const client = createClient("PYyuBmxiimtl3ZUUi2y2d7MKvzXmqkFXkUxms2pyKFzze4OE7hSwflfV")
 export const getMe = (token) => {
   return fetch('/api/users/me', {
     headers: {
@@ -54,4 +56,9 @@ export const deleteBook = (bookId, token) => {
 // https://www.googleapis.com/books/v1/volumes?q=harry+potter
 export const searchGoogleBooks = (query) => {
   return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+};
+export const searchPexelImages = () => {
+  client.photos.search({ query:"sky", per_page: 10, totalResults:80 }).then(photos => {
+    console.log(photos)
+  });
 };
