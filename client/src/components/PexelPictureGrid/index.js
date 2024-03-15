@@ -4,7 +4,7 @@ import {Pagination} from "react-bootstrap";
 const PexelPictureGrid = ({ pexelPictureArray,page,handlePageClick, active}) => {
  
   let items = [];
-  for (let number = 1; number <= 8; number++) {
+  for (let number = 1; number <= 10; number++) {
     items.push(
       <Pagination.Item key={number} value={number} active={number === active} >
         {number}
@@ -13,7 +13,6 @@ const PexelPictureGrid = ({ pexelPictureArray,page,handlePageClick, active}) => 
   }
   return (
     <div
-      className="col-12"
       style={{
         display: "flex",
         flexWrap: "wrap",

@@ -16,7 +16,6 @@ const Home = () => {
   };
   const handlePageClick = (event) => {
     const targetPage = parseInt(event.target.innerText);
-    console.log(targetPage)
     handlePageChange(targetPage);
     setActive(targetPage);
   };
@@ -30,7 +29,7 @@ const Home = () => {
       return false;
     }
     try {
-      const response = await client.photos.search({query, orientation: "landscape", per_page: 10, page, total_reults: 100})
+      const response = await client.photos.search({query, orientation: "landscape", per_page: 8, page, total_reults: 100})
       console.log(response)
       setPictureArray(response.photos)
     } catch (error) {
@@ -56,8 +55,8 @@ const Home = () => {
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </div>
-      <div className="col-9">
-      {pictureArray.length === 10 ? (
+      <div className="col-8">
+      {pictureArray.length === 8 ? (
           <PexelPictureGrid
             pexelPictureArray={pictureArray}
             page={page}
@@ -65,7 +64,7 @@ const Home = () => {
             active={active}
           />
         ) : (
-          <h3>error</h3>
+        <></>
         )}
       </div>
     </section>
